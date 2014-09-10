@@ -24,7 +24,7 @@ public class FirstActivity extends Activity {
 				Intent intent = new Intent(FirstActivity.this,
 						SecondActivity.class);
 				User user = new User();
-				user.setUsername("ParadigmCreatives");
+				user.setUsername("Training 2014");
 				user.setAddress("Hill-3");
 				user.setEmail("pcs@paradigmcreatives.com");
 				user.setPassword("1234");

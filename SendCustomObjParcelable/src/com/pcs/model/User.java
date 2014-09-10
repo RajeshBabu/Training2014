@@ -1,27 +1,17 @@
 package com.pcs.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.io.Serializable;
 
-public class User implements Parcelable {
+public class User implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String username;
 	private String password;
 	private String email;
 	private String phonenumber;
 	private String address;
-
-	public User(Parcel source) {
-		setPassword(source.readString());
-		setEmail(source.readString());
-		setAddress(source.readString());
-		setPhonenumber(source.readString());
-		setUsername(source.readString());
-
-	}
-
-	public User() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public String getUsername() {
 		return username;
@@ -62,37 +52,6 @@ public class User implements Parcelable {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
-	@Override
-	public int describeContents() {
-		return 0;
-	}
-
-	@Override
-	public void writeToParcel(Parcel dest, int flags) {
-		dest.writeString(getPassword());
-		dest.writeString(getEmail());
-		dest.writeString(getAddress());
-		dest.writeString(getPhonenumber());
-		dest.writeString(getUsername());
-
-
-	}
-
-	public static final Creator<User> CREATOR = new Creator<User>() {
-
-		@Override
-		public User[] newArray(int size) {
-			// TODO Auto-generated method stub
-			return new User[size];
-		}
-
-		@Override
-		public User createFromParcel(Parcel source) {
-			// TODO Auto-generated method stub
-			return new User(source);
-		}
-	};
 
 	public String toString() {
 		return "Username = " + getUsername() + "  Password =" + getPassword()

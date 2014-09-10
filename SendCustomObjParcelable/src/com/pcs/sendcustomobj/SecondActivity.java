@@ -13,7 +13,7 @@ public class SecondActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.second);
 		TextView textView = (TextView)findViewById(R.id.message_txt);
-		User user = getIntent().getParcelableExtra(Constants.IntentExtras.USER_INFO);
+		User user = (User) getIntent().getSerializableExtra(Constants.IntentExtras.USER_INFO);
 		if(user != null){
 			textView.setText(user.toString());
 		}
